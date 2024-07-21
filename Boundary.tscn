@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ttuskqyfyfj"]
+
+[ext_resource type="Script" path="res://Boundary.gd" id="1_2iisx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxbcb"]
+size = Vector2(640, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vydoh"]
+size = Vector2(8, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0c6v"]
+size = Vector2(8, 480)
+
+[node name="Boundary" type="Area2D"]
+script = ExtResource("1_2iisx")
+
+[node name="TopCollider" type="CollisionShape2D" parent="."]
+position = Vector2(320, 4)
+shape = SubResource("RectangleShape2D_uxbcb")
+
+[node name="BottomCollider" type="CollisionShape2D" parent="."]
+position = Vector2(320, 476)
+shape = SubResource("RectangleShape2D_uxbcb")
+
+[node name="LeftCollider" type="CollisionShape2D" parent="."]
+position = Vector2(4, 240)
+shape = SubResource("RectangleShape2D_vydoh")
+
+[node name="RightCollider" type="CollisionShape2D" parent="."]
+position = Vector2(636, 240)
+shape = SubResource("RectangleShape2D_w0c6v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkl3vipmt0toe"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_h1lap"]
+[ext_resource type="Texture2D" uid="uid://b68jnlu7g4x6q" path="res://Sprites/JetpackBoy.png" id="2_h5ku8"]
+[ext_resource type="Texture2D" uid="uid://ccf4bqjvmp4lq" path="res://Sprites/Thrust.png" id="3_4xt1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhtdr"]
+size = Vector2(48, 48)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_h1lap")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lhtdr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -9.53674e-07)
+scale = Vector2(3, 3)
+texture = ExtResource("2_h5ku8")
+
+[node name="Thrust" type="Sprite2D" parent="."]
+position = Vector2(-13.5, 33.5)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("3_4xt1b")
